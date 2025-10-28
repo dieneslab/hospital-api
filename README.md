@@ -19,7 +19,7 @@ Esta API foi desenvolvida para fornecer um sistema robusto de gestão hospitalar
 
 ## 📂 Estrutura do Projeto
 
-\`\`\`sh
+```sh
 📦 hospital-api
 ├── 📂 src
 │   ├── 📂 controllers     # Lógica de negócio
@@ -54,7 +54,7 @@ Esta API foi desenvolvida para fornecer um sistema robusto de gestão hospitalar
 ├── 📜 .env               # Variáveis de ambiente
 ├── 📜 package.json       # Dependências e scripts
 └── 📜 server.js          # Arquivo principal
-\`\`\`
+```
 
 ## 🚀 Como Executar a Aplicação
 
@@ -68,22 +68,22 @@ Antes de começar, certifique-se de ter instalado:
 
 ### 📥 Clonar o Repositório
 
-\`\`\`sh
+```sh
 git clone https://github.com/seu-usuario/hospital-api.git
 cd hospital-api
-\`\`\`
+```
 
 ### 📦 Instalar Dependências
 
-\`\`\`sh
+```sh
 npm install
-\`\`\`
+```
 
 ### 🗄️ Configurar Banco de Dados
 
 1. **Iniciar o PostgreSQL** e criar o banco:
 
-\`\`\`sql
+```sql
 -- Conectar ao PostgreSQL
 psql -U postgres
 
@@ -95,18 +95,18 @@ CREATE DATABASE hospital_db;
 
 -- Executar script de setup
 \\i scripts/setup.sql
-\`\`\`
+```
 
 2. **Ou usar Docker** (opcional):
-\`\`\`sh
+```sh
 docker run --name hospital-db -e POSTGRES_PASSWORD=senha123 -e POSTGRES_DB=hospital_db -p 5432:5432 -d postgres:13
-\`\`\`
+```
 
 ### ⚙️ Configurar Variáveis de Ambiente
 
 Crie um arquivo \`.env\` na raiz do projeto:
 
-\`\`\`env
+```env
 NODE_ENV=development
 PORT=3000
 DB_HOST=localhost
@@ -117,32 +117,32 @@ DB_PASS=senha123
 JWT_SECRET=seu_jwt_super_secreto_mude_em_producao_2023
 JWT_EXPIRES_IN=7d
 UPLOAD_PATH=./uploads
-\`\`\`
+```
 
 ### ▶️ Executar a Aplicação
 
 **Modo desenvolvimento:**
-\`\`\`sh
+```sh
 npm run server
-\`\`\`
+```
 
 **Modo produção:**
-\`\`\`sh
+```sh
 npm start
-\`\`\`
+```
 
 ## 📚 Documentação da API
 
 Após iniciar a aplicação, acesse a documentação interativa:
 
-\`\`\`
+```
 http://localhost:3000/api-docs
-\`\`\`
+```
 
 ### 🔍 Health Check
-\`\`\`
+```
 GET http://localhost:3000/health
-\`\`\`
+```
 
 ## 🎯 Endpoints Principais
 
@@ -179,7 +179,7 @@ GET http://localhost:3000/health
 ## 🧪 Testando a API
 
 ### 1. **Registrar um usuário:**
-\`\`\`bash
+```bash
 curl -X POST http://localhost:3000/api/auth/register \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -188,23 +188,23 @@ curl -X POST http://localhost:3000/api/auth/register \\
     "role": "admin",
     "full_name": "Administrador do Sistema"
   }'
-\`\`\`
+```
 
 ### 2. **Fazer login:**
-\`\`\`bash
+```bash
 curl -X POST http://localhost:3000/api/auth/login \\
   -H "Content-Type: application/json" \\
   -d '{
     "email": "admin@hospital.com",
     "password": "senha123"
   }'
-\`\`\`
+```
 
 ### 3. **Usar o token JWT** (obtido no login) em requisições subsequentes:
-\`\`\`bash
+```bash
 curl -X GET http://localhost:3000/api/patients \\
   -H "Authorization: Bearer SEU_TOKEN_JWT_AQUI"
-\`\`\`
+```
 
 ## 🔒 Sistema de Autenticação e Autorização
 
@@ -229,7 +229,7 @@ A API utiliza **JWT (JSON Web Tokens)** com os seguintes níveis de acesso:
 
 ## 🛠 Comandos Úteis
 
-\`\`\`sh
+```sh
 # Desenvolvimento (com auto-reload)
 npm run server
 
@@ -241,7 +241,7 @@ npm test
 
 # Configurar banco de dados
 npm run db:setup
-\`\`\`
+```
 
 ## 🤝 Contribuindo
 
