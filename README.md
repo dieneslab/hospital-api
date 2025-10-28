@@ -104,7 +104,7 @@ docker run --name hospital-db -e POSTGRES_PASSWORD=senha123 -e POSTGRES_DB=hospi
 
 ### ⚙️ Configurar Variáveis de Ambiente
 
-Crie um arquivo \`.env\` na raiz do projeto:
+Crie um arquivo `.env` na raiz do projeto:
 
 ```env
 NODE_ENV=development
@@ -147,34 +147,34 @@ GET http://localhost:3000/health
 ## 🎯 Endpoints Principais
 
 ### 🔐 Autenticação
-- \`POST /api/auth/register\` - Registrar novo usuário
-- \`POST /api/auth/login\` - Fazer login
-- \`GET /api/auth/profile\` - Obter perfil do usuário
+- `POST /api/auth/register` - Registrar novo usuário
+- `POST /api/auth/login` - Fazer login
+- `GET /api/auth/profile` - Obter perfil do usuário
 
 ### 👥 Pacientes
-- \`GET /api/patients\` - Listar pacientes (com paginação e filtros)
-- \`POST /api/patients\` - Criar paciente
-- \`GET /api/patients/stats\` - Estatísticas de pacientes
-- \`GET /api/patients/:id\` - Buscar paciente por ID
-- \`PUT /api/patients/:id\` - Atualizar paciente
-- \`DELETE /api/patients/:id\` - Deletar paciente
+- `GET /api/patients` - Listar pacientes (com paginação e filtros)
+- `POST /api/patients` - Criar paciente
+- `GET /api/patients/stats` - Estatísticas de pacientes
+- `GET /api/patients/:id` - Buscar paciente por ID
+- `PUT /api/patients/:id` - Atualizar paciente
+- `DELETE /api/patients/:id` - Deletar paciente
 
 ### 🩺 Médicos
-- \`GET /api/doctors\` - Listar médicos
-- \`POST /api/doctors\` - Criar médico
-- \`GET /api/doctors/stats\` - Estatísticas de médicos
+- `GET /api/doctors` - Listar médicos
+- `POST /api/doctors` - Criar médico
+- `GET /api/doctors/stats` - Estatísticas de médicos
 
 ### 📅 Consultas
-- \`GET /api/appointments\` - Listar consultas
-- \`POST /api/appointments\` - Agendar consulta
-- \`PATCH /api/appointments/:id/status\` - Atualizar status da consulta
-- \`GET /api/appointments/stats\` - Estatísticas de consultas
+- `GET /api/appointments` - Listar consultas
+- `POST /api/appointments` - Agendar consulta
+- `PATCH /api/appointments/:id/status` - Atualizar status da consulta
+- `GET /api/appointments/stats` - Estatísticas de consultas
 
 ### 📁 Arquivos
-- \`POST /api/files/upload\` - Upload de arquivo médico
-- \`GET /api/files/patient/:patient_id\` - Listar arquivos do paciente
-- \`GET /api/files/download/:file_id\` - Download de arquivo
-- \`DELETE /api/files/:file_id\` - Deletar arquivo
+- `POST /api/files/upload` - Upload de arquivo médico
+- `GET /api/files/patient/:patient_id` - Listar arquivos do paciente
+- `GET /api/files/download/:file_id` - Download de arquivo
+- `DELETE /api/files/:file_id` - Deletar arquivo
 
 ## 🧪 Testando a API
 
@@ -255,4 +255,4 @@ Este projeto está sob a licença MIT. Para mais detalhes, consulte o arquivo [L
 
 Desenvolvido por [Dienes Stein](https://github.com/dieneslab) 💻✨
 
-**🚀 A API estará rodando em \`http://localhost:3000\`**
+**🚀 A API estará rodando em `http://localhost:3000`**
