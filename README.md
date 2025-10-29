@@ -115,6 +115,7 @@ DB_PORT=5432
 DB_NAME=hospital_db
 DB_USER=postgres
 DB_PASS=senha123
+DATABASE_URL=postgresql://postgres:senha@xyz.rlwy.net:8080/railway
 JWT_SECRET=seu_jwt_super_secreto_mude_em_producao_2023
 JWT_EXPIRES_IN=7d
 UPLOAD_PATH=./uploads
@@ -125,11 +126,6 @@ UPLOAD_PATH=./uploads
 **Modo desenvolvimento:**
 ```sh
 npm run server
-```
-
-**Modo produção:**
-```sh
-npm start
 ```
 
 ## 📚 Documentação da API
@@ -234,15 +230,8 @@ A API utiliza **JWT (JSON Web Tokens)** com os seguintes níveis de acesso:
 # Desenvolvimento (com auto-reload)
 npm run server
 
-# Produção
-npm start
-
 # Executar testes
 npm test
-
-# Configurar banco de dados
-npm run db:setup
-```
 
 ## 🤝 Contribuindo
 

@@ -4,10 +4,8 @@
   "description": "Sistema de Gestão Hospitalar com PostgreSQL",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
     "server": "nodemon server.js",
-    "test": "jest",
-    "db:setup": "psql -h localhost -U postgres -f scripts/setup.sql"
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.18.2",

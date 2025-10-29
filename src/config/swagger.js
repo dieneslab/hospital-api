@@ -23,7 +23,7 @@ const options = {
                 description: 'Development server'
             },
             {
-                url: 'https://hospital-api-production-6ade.up.railway.app',
+                url: 'https://hospital-api.up.railway.app',
                 description: 'Production server'
             }
         ],
