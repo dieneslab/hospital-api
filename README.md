@@ -70,7 +70,7 @@ Antes de começar, certifique-se de ter instalado:
 ### 📥 Clonar o Repositório
 
 ```sh
-git clone https://github.com/seu-usuario/hospital-api.git
+git clone https://github.com/dieneslab/hospital-api.git
 cd hospital-api
 ```
 
