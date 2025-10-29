@@ -43,7 +43,7 @@ const { validate, validation } = require('../middleware/validation');
  *       201:
  *         description: Consulta agendada com sucesso
  */
-router.post('/', authenticateToken, authorize('admin', 'staff'), validate(validation.appointment), appointmentController.createAppointment);
+router.post('/', authenticateToken, authorize('admin', 'doctor','staff'), validate(validation.appointment), appointmentController.createAppointment);
 
 /**
  * @swagger

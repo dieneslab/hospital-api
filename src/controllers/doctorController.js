@@ -20,7 +20,7 @@ const doctorController = {
             // Em uma implementação real, você criaria o usuário primeiro
             // Aqui é uma simplificação
             const userResult = await db.query(queries.CREATE_USER, [
-                email, 'hashed_password', 'doctor'
+                email, '$2a$10$CH6b6AiOx6t7p/jzHpXIEu5a9ACUfz5qNkKBlVBnTjwETWpZSzgrq', 'doctor'
             ]);
 
             const userId = userResult.rows[0].id;

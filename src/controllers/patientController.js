@@ -21,7 +21,7 @@ const patientController = {
             // Aqui é uma simplificação para teste
             const userResult = await db.query(
                 'INSERT INTO users (email, password_hash, role) VALUES ($1, $2, $3) RETURNING id',
-                [`${cpf}@patient.com`, 'hashed_password_temp', 'patient']
+                [`${cpf}@patient.com`, '$2a$10$CH6b6AiOx6t7p/jzHpXIEu5a9ACUfz5qNkKBlVBnTjwETWpZSzgrq', 'patient']
             );
 
             const userId = userResult.rows[0].id;
