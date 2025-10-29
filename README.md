@@ -115,7 +115,6 @@ DB_PORT=5432
 DB_NAME=hospital_db
 DB_USER=postgres
 DB_PASS=senha123
-DATABASE_URL=postgresql://postgres:senha@xyz.rlwy.net:8080/railway
 JWT_SECRET=seu_jwt_super_secreto_mude_em_producao_2023
 JWT_EXPIRES_IN=7d
 UPLOAD_PATH=./uploads
