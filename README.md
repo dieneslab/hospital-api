@@ -50,7 +50,8 @@ Esta API foi desenvolvida para fornecer um sistema robusto de gestão hospitalar
 │   └── 📂 tests          # Testes automatizados
 ├── 📂 uploads            # Arquivos enviados
 ├── 📂 scripts            # Scripts do banco
-│   └── setup.sql
+│   └── hospital-railway-setup.sql
+│   └── hospital-setup.sql
 ├── 📜 .env               # Variáveis de ambiente
 ├── 📜 package.json       # Dependências e scripts
 └── 📜 server.js          # Arquivo principal
@@ -94,7 +95,7 @@ CREATE DATABASE hospital_db;
 \\c hospital_db;
 
 -- Executar script de setup
-\\i scripts/setup.sql
+\\i scripts/hospital-setup.sql
 ```
 
 2. **Ou usar Docker** (opcional):

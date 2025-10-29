@@ -76,10 +76,11 @@ app.use((error, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
+const HOST = process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost';
 
-app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando na porta ${PORT}`);
-    console.log(`📚 Documentação: http://localhost:${PORT}/api-docs`);
-    console.log(`❤️  Health check: http://localhost:${PORT}/health`);
+app.listen(PORT, HOST, () => {
+    console.log(`🚀 Servidor rodando em http://${HOST}:${PORT}`);
+    console.log(`📚 Documentação: http://${HOST}:${PORT}/api-docs`);
+    console.log(`❤️  Health check: http://${HOST}:${PORT}/health`);
     console.log(`💾 Ambiente: ${process.env.NODE_ENV}`);
 });
