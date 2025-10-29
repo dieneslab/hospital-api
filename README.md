@@ -115,6 +115,8 @@ DB_PORT=5432
 DB_NAME=hospital_db
 DB_USER=postgres
 DB_PASS=senha123
+API_URL_DEV=http://localhost:3000
+API_URL_PROD=https://hospital-api.up.railway.app
 JWT_SECRET=seu_jwt_super_secreto_mude_em_producao_2023
 JWT_EXPIRES_IN=7d
 UPLOAD_PATH=./uploads
@@ -139,6 +141,14 @@ http://localhost:3000/api-docs
 ```
 GET http://localhost:3000/health
 ```
+
+## 🌐 Testes Online
+
+Tento manter sempre no ar, mas a API está disponível para testes em produção:
+
+🔗 https://hospital-api.up.railway.app/api-docs
+
+Documentação interativa com Swagger - teste todos os endpoints diretamente pelo navegador.
 
 ## 🎯 Endpoints Principais
 

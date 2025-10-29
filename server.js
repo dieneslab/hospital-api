@@ -78,8 +78,38 @@ app.use((error, req, res, next) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando na porta ${PORT}`);
-    console.log(`📚 Documentação: http://localhost:${PORT}/api-docs`);
-    console.log(`❤️  Health check: http://localhost:${PORT}/health`);
-    console.log(`💾 Ambiente: ${process.env.NODE_ENV}`);
+    // Determinar URL base dinamicamente
+    let baseUrl;
+    if (process.env.NODE_ENV === 'production') {
+        baseUrl = process.env.API_URL_PROD || 'https://hospital-api.up.railway.app';
+    } else {
+        baseUrl = process.env.API_URL_DEV || `http://localhost:${PORT}`;
+    }
+    
+    const asciiArt = `
+╔═══════════════════════════════════════════════════╗
+║                🏥 HOSPITAL API                    ║
+║                Sistema de Gestão                  ║
+╚═══════════════════════════════════════════════════╝
+    `;
+    
+    console.log(asciiArt);
+    console.log('📊 ' + 'INFORMAÇÕES DO SISTEMA'.padEnd(35, ' ') + '📊');
+    console.log('├' + '─'.repeat(48) + '┤');
+    console.log(`│ 📍 Porta: ${PORT.toString().padEnd(38)} │`);
+    console.log(`│ 🌐 Ambiente: ${(process.env.NODE_ENV || 'development').padEnd(33)} │`);
+    console.log(`│ 🔗 URL: ${baseUrl.padEnd(39)} │`);
+    console.log('├' + '─'.repeat(48) + '┤');
+    console.log(`│ 📚 Docs: ${(baseUrl + '/api-docs').padEnd(38)} │`);
+    console.log(`│ ❤️  Health: ${(baseUrl + '/health').padEnd(37)} │`);
+    console.log('╰' + '─'.repeat(48) + '╯');
+    
+    // Log da fonte da URL
+    if (process.env.API_URL_PROD && process.env.NODE_ENV === 'production') {
+        console.log('✅ URL carregada do .env');
+    } else if (process.env.API_URL_DEV && process.env.NODE_ENV !== 'production') {
+        console.log('✅ URL carregada do .env');
+    } else {
+        console.log('ℹ️  URL padrão (fallback)');
+    }
 });

@@ -1,6 +1,38 @@
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
+// Configuração simplificada usando as mesmas variáveis
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Servers - todos usando as mesmas variáveis do .env
+const servers = [
+    {
+        url: isProduction 
+            ? (process.env.API_URL_PROD || 'https://hospital-api.up.railway.app')
+            : (process.env.API_URL_DEV || `http://localhost:${process.env.PORT || 3000}`),
+        description: isProduction ? '🎯 Production server' : '🎯 Development server'
+    },
+    {
+        url: process.env.API_URL_PROD || 'https://hospital-api.up.railway.app',
+        description: '🚀 Production'
+    },
+    {
+        url: process.env.API_URL_DEV || 'http://localhost:3000',
+        description: '💻 Development'
+    }
+];
+
+// Remover duplicatas
+const uniqueServers = servers.filter((server, index, self) => 
+    index === self.findIndex(s => s.url === server.url)
+);
+
+console.log('🔧 Swagger Servers Config:');
+uniqueServers.forEach((server, index) => {
+    const indicator = index === 0 ? '🎯 SELECIONADO' : '🔁 ALTERNATIVA';
+    console.log(`   ${indicator}: ${server.description} - ${server.url}`);
+});
+
 const options = {
     definition: {
         openapi: '3.0.0',
@@ -17,16 +49,7 @@ const options = {
                 url: 'https://spdx.org/licenses/MIT.html'
             }
         },
-        servers: [
-            {
-                url: 'http://localhost:3000',
-                description: 'Development server'
-            },
-            {
-                url: 'https://hospital-api.up.railway.app',
-                description: 'Production server'
-            }
-        ],
+        servers: uniqueServers,
         components: {
             securitySchemes: {
                 bearerAuth: {
