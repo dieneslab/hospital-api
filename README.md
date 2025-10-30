@@ -241,6 +241,7 @@ npm run server
 
 # Executar testes
 npm test
+```
 
 ## 🤝 Contribuindo
 
@@ -253,5 +254,3 @@ Este projeto está sob a licença MIT. Para mais detalhes, consulte o arquivo [L
 ---
 
 Desenvolvido por [Dienes Stein](https://github.com/dieneslab) 💻✨
-
-**🚀 A API estará rodando em `http://localhost:3000`**
